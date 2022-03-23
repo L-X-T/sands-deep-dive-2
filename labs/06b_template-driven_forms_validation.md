@@ -8,7 +8,7 @@
   - [Bonus: Parameterized Multi-Field-Validator **](#bonus-parameterized-multi-field-validator-)
   - [Bonus: Asynchronous Multi-Field-Validator ***](#bonus-asynchronous-multi-field-validator-)
 
-## Cumstom Validator
+## Custom Validator
 
 In this exercise you will provide your own validator in the form of a directive. This should check registered city names against a hard-coded whitelist and can be used as follows:
 
