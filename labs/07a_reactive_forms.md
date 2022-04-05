@@ -233,7 +233,7 @@ In this exercise you will validate the _from_ field with the built-in validators
     ```TypeScript
     <input  formControlName="from">		
     [...]           
-    errors: {{editForm.controls['from'].errors | json}}
+    errors: {{editForm.controls.from.errors | json}}
     ```
 
     </p>
@@ -248,7 +248,7 @@ In this exercise you will validate the _from_ field with the built-in validators
     ```TypeScript
     <input  formControlName="from" [...] >		
     [...]
-    <div class="text-danger" *ngIf="editForm.controls['from'].hasError('minlength')">		
+    <div class="text-danger" *ngIf="editForm.controls.from.hasError('minlength')">		
         ...minlength...
     </div>		
     ```

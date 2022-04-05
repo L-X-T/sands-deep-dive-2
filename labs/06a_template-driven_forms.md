@@ -42,11 +42,11 @@ You can use the following procedure as a guide:
            maxlength="15"		
            pattern="[a-zA-Z ]*">		
 
-    <pre>{{form?.controls['from']?.errors | json}}</pre>
+    <pre>{{form?.controls?.from?.errors | json}}</pre>
 
     [...]
     <div class="text-danger"
-         *ngIf="form?.controls['from']?.hasError('minlength')">		
+         *ngIf="form?.controls?.from?.hasError('minlength')">		
         ... minlength ...
     </div>		
     [...]
@@ -59,7 +59,7 @@ You can use the following procedure as a guide:
 
 ## Bonus: Reusable component for displaying the validation errors *
 
-In order not to have to query the validation errors in the same way over and over again for each input field, it is advisable to use a central component. This can receive the property ``errors`` of the validated ``FormControl``. For example, the expression ``f?.Controls['from']?.errors`` returns the following object if both the validator ``minlength`` and a possibly self-written``city`` validator fail:
+In order not to have to query the validation errors in the same way over and over again for each input field, it is advisable to use a central component. This can receive the property ``errors`` of the validated ``FormControl``. For example, the expression ``f?.Controls?.from?.errors`` returns the following object if both the validator ``minlength`` and a possibly self-written``city`` validator fail:
 
 ```json
 {
@@ -91,7 +91,7 @@ This component should be able to be called up as follows:
     <input class="form-control" [(ngModel)]="from" name="from"
            required minlength="3">
 
-    <flight-validation-errors [errors]="form?.controls['from']?.errors">
+    <flight-validation-errors [errors]="form?.controls?.from?.errors">
     </flight-validation-errors>
 </div>
 ```
