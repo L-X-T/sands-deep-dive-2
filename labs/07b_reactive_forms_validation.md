@@ -73,7 +73,7 @@ In this exercise, you will write your own validator for your reactive form, whic
 
     ```html
     [...]
-    <div class="text-danger" *ngIf="editForm.controls['from'].hasError('city')">
+    <div class="text-danger" *ngIf="editForm.controls.from.hasError('city')">
         ...city...
     </div>
     [...]
@@ -151,8 +151,8 @@ In this exercise you will write a multifield validator that ensures that a diffe
     ```typescript
     [...]   
     export function validateRoundTrip(g: FormGroup): object {
-       let from = g.controls['from'];
-       let to = g.controls['to'];
+       let from = g.controls.from;
+       let to = g.controls.to;
 
        if (!from || !to) return null;
 

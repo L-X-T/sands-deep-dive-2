@@ -92,7 +92,7 @@ You can use the following procedure as a guide:
            pattern="[a-zA-Z ]*"
            city>
     [...]
-    <div *ngIf="form?.controls['from']?.hasError('city')">
+    <div *ngIf="form?.controls?.from?.hasError('city')">
         ... city ...
     </div>
     [...]
@@ -259,7 +259,7 @@ You can use the following procedure as a guide:
            asyncCity
            city="Graz,Hamburg,Zürich">
     [...]
-    <div *ngIf="form?.controls['from']?.hasError('asyncCity')">
+    <div *ngIf="form?.controls?.from?.hasError('asyncCity')">
         ... asyncCity ...
     </div>
     [...]
@@ -275,7 +275,7 @@ You can use the following procedure as a guide:
     <p>
 
     ```html
-    <div *ngIf="form?.controls['from']?.pending">
+    <div *ngIf="form?.controls?.from?.pending">
         ... Executing Async Validator ...
     </div>
     [...]
@@ -307,8 +307,8 @@ validate(c: AbstractControl): object {
 
     let group: FormGroup = c as FormGroup; // type cast
 
-    let fromCtrl = group.controls['from'];
-    let toCtrl = group.controls['to'];
+    let fromCtrl = group.controls?.from;
+    let toCtrl = group.controls?.to;
 
     if (!fromCtrl || !toCtrl) return { };
 
