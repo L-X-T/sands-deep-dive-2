@@ -18,12 +18,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "--cacheDirectory": "c:\\temp\\cache"
       }
     }
@@ -32,152 +27,64 @@
     "default": {
       "runner": "./tools/task-runners/custom-task-runner",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "remoteDirectory": "c:\\temp\\remote-cache"
       }
     }
   },
   "projects": {
-    "dashboard": {
-      "tags": [
-        "domain:dashboard"
-      ]
-    },
-    "dashboard-e2e": {
-      "tags": [
-        "e2e"
-      ],
-      "implicitDependencies": [
-        "dashboard"
-      ]
-    },
-    "dashboard-lib": {
-      "tags": [
-        "domain:dashboard",
-        "type:domain-logic"
-      ]
-    },
-    "external": {
-      "tags": [
-        "domain:external"
-      ]
-    },
-    "external-e2e": {
-      "tags": [
-        "e2e"
-      ],
-      "implicitDependencies": [
-        "external"
-      ]
-    },
-    "flight-admin": {
-      "tags": [
-        "domain:flights"
-      ]
+    "flight-app-e2e": {
+      "tags": ["e2e"],
+      "implicitDependencies": ["flight-app"]
     },
     "flight-admin-e2e": {
-      "tags": [
-        "e2e"
-      ],
-      "implicitDependencies": [
-        "flight-admin"
-      ]
+      "tags": ["e2e"],
+      "implicitDependencies": ["flight-admin"]
+    },
+    "dashboard-e2e": {
+      "tags": ["e2e"],
+      "implicitDependencies": ["dashboard"]
+    },
+    "external-e2e": {
+      "tags": ["e2e"],
+      "implicitDependencies": ["external"]
     },
     "flight-app": {
-      "tags": [
-        "domain:flights"
-      ]
+      "tags": ["domain:flights"]
     },
-    "flight-app-e2e": {
-      "tags": [
-        "e2e"
-      ],
-      "implicitDependencies": [
-        "flight-app"
-      ]
+    "flight-admin": {
+      "tags": ["domain:flights"]
     },
     "flight-lib": {
-      "tags": [
-        "domain:flights",
-        "type:domain-logic"
-      ]
+      "tags": ["domain:flights", "type:domain-logic"]
     },
     "logger-lib": {
-      "tags": [
-        "domain:shared",
-        "type:util"
-      ]
+      "tags": ["domain:shared"]
     },
-    "luggage": {
-      "tags": [
-        "domain:apps/luggage",
-        "type:app"
-      ]
+    "dashboard": {
+      "tags": ["domain:dashboard"]
     },
-    "luggage-domain": {
-      "tags": [
-        "domain:luggage",
-        "type:domain-logic"
-      ]
+    "dashboard-lib": {
+      "tags": ["domain:dashboard", "type:domain-logic"]
     },
-    "luggage-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "luggage"
-      ]
-    },
-    "luggage-feature-checkin": {
-      "tags": [
-        "domain:luggage",
-        "type:feature"
-      ]
-    },
-    "luggage-feature-report-loss": {
-      "tags": [
-        "domain:luggage",
-        "type:feature"
-      ]
-    },
-    "luggage-ui-card": {
-      "tags": [
-        "domain:luggage",
-        "type:ui"
-      ]
-    },
-    "passenger": {
-      "tags": [
-        "domain:passenger",
-        "type:app"
-      ]
+    "external": {
+      "tags": ["domain:external"]
     },
     "passenger-domain": {
-      "tags": [
-        "domain:passenger",
-        "type:domain-logic"
-      ]
+      "tags": ["domain:passenger", "type:domain-logic"]
+    },
+    "passenger": {
+      "tags": ["domain:passenger", "type:app"]
     },
     "passenger-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "passenger"
-      ]
-    },
-    "passenger-feature-edit": {
-      "tags": [
-        "domain:passenger",
-        "type:feature"
-      ]
+      "implicitDependencies": ["passenger"]
     },
     "passenger-feature-search": {
-      "tags": [
-        "domain:passenger",
-        "type:feature"
-      ]
+      "tags": ["domain:passenger", "type:feature"]
+    },
+    "passenger-feature-edit": {
+      "tags": ["domain:passenger", "type:feature"]
     }
   }
 }
