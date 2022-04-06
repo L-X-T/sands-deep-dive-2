@@ -1,20 +1,19 @@
 /* eslint-disable no-restricted-syntax */
 import { Injectable, Optional } from '@angular/core';
 import { LoggerConfig } from './logger.config';
-import { LogFormatterService } from './log-formatter.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoggerService {
-  constructor(@Optional() private config: LoggerConfig, private logFormatter: LogFormatterService) {}
+  constructor(@Optional() private config: LoggerConfig) {}
 
   debug(message: string): void {
     if (!this.config.enableDebug) return;
-    console.debug(this.logFormatter.format(message));
+    console.debug(message);
   }
 
   log(message: string): void {
-    console.log(this.logFormatter.format(message));
+    console.log(message);
   }
 }
